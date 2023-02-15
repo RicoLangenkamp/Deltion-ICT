@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Flexible Boxes</h1>
+    <p>Je hebt 10 seconden om zo veel mogelijk kleuren te raken.
+    <br>Je score is aantal raak - aantal mis - aantal te laat.
+    <br>Je hebt 2 seconden om een kleur te raken
+    <br>Als deze tijd om is, of als je schiet. krijg je nieuwe kleuren</p>
+    <div id="box">
+        <div id="settings">
+            <h3>Settings</h3>
+                <table>
+                    <tr>
+                        <td>Totaal aantal seconden: </td>
+                        <td><input type="number" id="timet" value="10" style="width: 30px;"></td>
+                    </tr>
+                    <tr>
+                        <td>Seconden per kleur: </td>
+                        <td><input type="number" id="timek" value="2" style="width: 30px;"></td>
+                    </tr>
+                </table>
+        </div>
+        <div>&nbsp&nbsp&nbsp&nbsp</div>
+        <div class="flex-container">
+            <div id="div1" onclick="doeIets(1)"></div>
+            <div id="div2" onclick="doeIets(2)"></div>
+            <div id="div3" onclick="doeIets(3)"></div>
+            <div id="div4" onclick="doeIets(4)"></div>
+            <div id="div5" onclick="doeIets(5)"></div>
+            <div id="div6" onclick="doeIets(6)"></div>
+            <div id="div7" onclick="doeIets(7)"></div>
+            <div id="div8" onclick="doeIets(8)"></div>
+            <div id="div9" onclick="doeIets(9)"></div>
+            <div style="flex: 3" id="div10"></div>
+        </div>
+        <div id="testje"></div>
+        <div id="testje2"></div>
+    </div>
+    <button id="start" onclick="start()">Start</button>
+    <button id="start" onclick="stop()">Stop</button><br><br>
+    <p id="raak"><b>aantal raak is: </b></p>
+    <p id="mis"><b>aantal mis is: </b></p>
+    <p id="laat"><b>aantal laat is: </b></p>
+    <p id="score"><b>Je score is: </b></p>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

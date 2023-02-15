@@ -1,0 +1,75 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin-left: 10%;
+    width: 80%;
+}
+body {
+    background-image: url("../images/repeating-hexagon.jpg");
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+nav {
+    background-color: rgb(147, 255, 153);
+    padding-left: 5px;
+    text-decoration:none;
+}
+
+main {
+
+    overflow: auto;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);   
+    display: flex;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align:right;
+    padding-right: 1%;
+    font-weight: bold;
+}
+
+.divjes {
+    background: rgba(0, 255, 0, 0.2);
+}
+
+.divjes div {
+    border: 1px solid black;
+}
+
+.content{
+    flex: 4;
+    margin-left: 5px;
+}
+
+#leftcollapse{
+    background-color: navy;
+    color: aqua;
+}
+
+aside{
+    background-color:purple;
+    overflow: hidden;
+    transition: 0.8s;
+}
+
+.open {
+    flex:1;
+}
+
+.close {
+    flex:0;
+    color:rgb(88, 67, 44);
+}

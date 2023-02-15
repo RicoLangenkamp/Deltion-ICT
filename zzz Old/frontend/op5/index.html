@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opdracht 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d781f1c539.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            Inlogscherm
+        </header>
+
+        <nav>
+            <button id="login" onclick="showDialog('login')">Login</button>
+            <button id="contact" onclick="showDialog('contact')">Contact</button>
+            <button><a href=".." style="text-decoration: none;">Directory</a></button>
+        </nav>
+        
+        <div id="overlay"></div>
+        <div id="dialog">
+            <div class="hd">
+                <div id="hdhead"></div>
+                <div id="closelogin" onclick="hideDialog()">&nbsp<i class="fa-solid fa-xmark"></i>&nbsp</div>
+            </div>
+            <div class="cn" id="dialogcontent"></div>
+            <div class="ft" id="dialogfooter"></div>
+        </div>
+
+        <main>
+            <aside id="asideLeft" class="open"></aside>
+            <div id="leftcollapse">
+                <i id="arrow" class="fa-solid fa-square-caret-left fa-lg"></i>
+            </div>
+            <div class="content">content</div>
+            <aside id="asideRight" class="open"></aside>
+        </main>
+
+        <footer>
+            Footer
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById("arrow").onclick = function klikMij() {
+            if(document.getElementById("asideLeft").className == "close") {
+            document.getElementById("asideLeft").className = "open";
+            document.getElementById("asideRight").className = "open";
+            document.getElementById("arrow").className = "fa-solid fa-square-caret-left fa-lg";
+            } else {
+            document.getElementById("asideLeft").className = "close";
+            document.getElementById("asideRight").className = "close";
+            document.getElementById("arrow").className = "fa-solid fa-square-caret-right fa-lg";
+        }}
+
+        function showDialog(sWelke) {
+            document.getElementById("dialog").style.top = "200px";
+            document.getElementById("overlay").style.display = "block";
+            if(sWelke == 'login') {
+                document.getElementById("hdhead").innerHTML = 'Inloggen';
+                document.getElementById("dialogfooter").innerHTML = 'inlog scherm';
+                document.getElementById("dialogcontent").innerHTML = '<form action="" method="post"><table><tr><h3 style="margin:0"><b>Inlog Formulier</b></h3></tr><tr><td>Naam:</td><td><input type="text"></td></tr><tr><td>Wachtwoord:</td><td><input type="password"></td></tr></table></form>'
+            }
+            if(sWelke == 'contact') {
+                document.getElementById("hdhead").innerHTML = 'Contact';
+                document.getElementById("dialogfooter").innerHTML = 'door Rico Langenkamp';
+                document.getElementById("dialogcontent").innerHTML = 'Mail: 97096729@st.deltion.nl <br> <img src="../images/hond.jpg" width="120" height="80">';
+            }
+        } 
+        
+        function hideDialog() {
+            document.getElementById("dialog").style.top = "-300px";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>

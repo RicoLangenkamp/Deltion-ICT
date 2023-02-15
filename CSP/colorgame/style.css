@@ -1,0 +1,64 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(203, 202, 202);
+    width: 156px;
+    height: 208px;
+    padding: 3px;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin: 1px;
+    width:50px;
+    height:50px;
+    text-align: center;
+    font-size: 30px;
+  }
+  
+  #box{
+    display: flex;
+    flex-direction: row;
+    height: 218px;
+  }
+
+  .settings{
+    width: 180px;
+  }
+
+  .testje{
+    border: 1px;
+    height: 210px;
+    overflow-wrap: normal;
+  }
+
+  #div1{
+    background-color: rgb(0, 148, 101);
+  }
+  #div2{
+    background-color: Purple;
+  }
+  #div3{
+    background-color: Pink;
+  }
+  #div4{
+    background-color: red;
+  }
+  #div5{
+    background-color: yellow;
+  }
+  #div6{
+    background-color: gray;
+  }
+  #div7{
+    background-color: turquoise;
+  }
+  #div8{
+    background-color: green;
+  }
+  #div9{
+    background-color: blue;
+  }
+  #div10{
+    background-color: gray;
+  }

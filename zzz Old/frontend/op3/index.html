@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opdracht 3</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d781f1c539.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            Sidebars
+        </header>
+        <nav>
+            <a href="..">Directory</a>
+        </nav>
+        <main>
+            <aside id="asideLeft" class="open"></aside>
+            <div id="leftcollapse">
+                <i id="arrow" class="fa-solid fa-square-caret-left fa-lg"></i>
+            </div>
+            <div class="content">content</div>
+            <aside id="asideRight" class="open"></aside>
+        </main>
+        <footer>
+            Footer
+        </footer>
+    </div>
+    <script>
+        document.getElementById("leftcollapse").onclick = function klikMij() {
+            if(document.getElementById("asideLeft").className == "close") {
+            document.getElementById("asideLeft").className = "open";
+            document.getElementById("asideRight").className = "open";
+            document.getElementById("arrow").className = "fa-solid fa-square-caret-left fa-lg";
+            } else {
+            document.getElementById("asideLeft").className = "close";
+            document.getElementById("asideRight").className = "close";
+            document.getElementById("arrow").className = "fa-solid fa-square-caret-right fa-lg";
+        }}
+    </script>
+</body>
+</html>

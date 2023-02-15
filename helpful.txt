@@ -1,0 +1,4 @@
+add fontawesome (in header): <script src="https://kit.fontawesome.com/d781f1c539.js" crossorigin="anonymous"></script>
+css toevoegen: <link rel="stylesheet" href="style.css">
+js toevoegen: <script src="script.js"></script>
+advent of code

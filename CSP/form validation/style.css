@@ -1,0 +1,51 @@
+
+#vname{
+    width: 80px;
+    background-color: #FFFFFF;
+}
+#tname{
+    width: 20px;
+    background-color: #FFFFFF;
+}
+#lname{
+    width: 100px;
+    background-color: #FFFFFF;
+}
+
+#street{
+    width: 162px;
+    background-color: #FFFFFF;
+}
+#housenumber{
+    width: 50px;
+    background-color: #FFFFFF;
+}
+
+#postcode{
+    width: 54px;
+    background-color: #FFFFFF;
+}
+#place{
+    width: 158px;
+    background-color: #FFFFFF;
+}
+
+#number{
+    width: 224px;
+    background-color: #FFFFFF;
+}
+
+#mail{
+    width: 224px;
+    background-color: #FFFFFF;
+}
+
+#birthdate{
+    width: 224px;
+    background-color: #FFFFFF;
+}
+
+#button{
+    float: right;
+}
+

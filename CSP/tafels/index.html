@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tafels</title>
+</head>
+
+<body>
+    <form action="" method="POST" id="form">
+        <h1>Tafels</h1>
+        <table>
+            <tr>
+                <td>Geef getal voor Tafel:</td>
+                <td><input type="number" name="tafel" id="tafel" placeholder="Tafel"></td>
+            </tr>
+            <tr>
+                <!--spaces are to create room between text and input-->
+                <td>Geef beginwaarde voor Tafel: &nbsp&nbsp</td>
+                <td><input type="number" name="btafel" id="btafel" value="1"></td>
+            </tr>
+            <tr>
+                <td>Geef eindwaarde voor Tafel:</td>
+                <td><input type="number" name="etafel" id="etafel" value="10"></td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <button id="sendit">Geef de tafel weer</button>
+
+    <p id="out"></p>
+
+    <script>
+        document.getElementById("sendit").onclick = function form() {
+            var x = "";
+            let input = document.getElementById("tafel").value;
+            let begin = document.getElementById("btafel").value;
+            let end = document.getElementById("etafel").value;
+
+            if(input == ""){
+                x = "Voer een tafel in";
+            }
+            else{
+                for (let i = begin; i <= end;) {
+                x = x + i + " x " + input + " = " + myFunction(i, input) + "<br>";
+                i++;
+                }
+            }
+
+            if(begin>=end){
+                x = "De beginwaarde mag niet groter zijn dan de eindwaarde.";
+            }
+
+            document.getElementById("out").innerHTML = x;
+            document.getElementById("tafel").value = "";
+
+            document.getElementById("tafel").focus();
+            document.getElementById("tafel").select();
+        }
+
+        function myFunction(a, b) {
+            return a * b;
+        }
+    </script>
+
+</body>
+
+</html>

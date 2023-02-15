@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="..">Directory</a>
+    <h1>Opdracht JS01</h1>
+    <h3>B)</h3>
+    <button id="Date">Geef datum en tijd</button>
+    <button id="Alert">Alert "Hello World"</button>
+    <button id="Console">Console "Hello World"</button><br><br>
+    <p>Teller</p>
+    <button id="Teller">0</button><br><br>
+    <p>Andere Opmaak</p>
+    <button id="opmaak" class="normaal">Opmaak</button>
+
+
+
+    <script>
+        const d = new Date();
+        const date = "Datum " + d.getDate() + "/" + (d.getMonth()+1)  + "/" + d.getFullYear() + "   Tijd " + d.getHours() 
+                    + ":" + d.getMinutes() + ":" + d.getSeconds();
+
+        document.getElementById("Date").onclick = function klikMij() {
+            alert(date);
+        }
+
+        document.getElementById("Alert").onclick = function klikMij() {
+            alert("Hello World");
+        }
+
+        document.getElementById("Console").onclick = function klikMij() {
+            console.log("Hello World");
+        }
+
+        var teller = 0;
+        document.getElementById("Teller").onclick = function klikMij() {
+            teller = teller + 1;
+            document.getElementById("Teller").innerHTML = teller;
+        }
+
+        document.getElementById("opmaak").onclick = function klikMij() {
+            if(document.getElementById("opmaak").className == "normaal") {
+            document.getElementById("opmaak").className = "anders";
+            } else {
+            document.getElementById("opmaak").className = "normaal";
+        }}
+
+    </script>
+</body>
+</html>

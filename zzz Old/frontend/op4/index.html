@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opdracht 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/d781f1c539.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="container">
+        <header>
+            Inlogscherm
+        </header>
+
+        <nav>
+            <button id="login">Login</button>
+            <button><a href=".." style="text-decoration: none;">Directory</a></button>
+        </nav>
+        <div id="overlay"></div>
+        <div id="dialog">
+            <div class="hd">
+                <div id="hdhead">Titel</div>
+                <div id="closelogin">&nbsp<i class="fa-solid fa-xmark"></i>&nbsp</div>
+            </div>
+            <div class="cn">Content</div>
+            <div class="ft">Footer</div>
+        </div>
+
+        <main>
+            <aside id="asideLeft" class="open"></aside>
+            <div id="leftcollapse">
+                <i id="arrow" class="fa-solid fa-square-caret-left fa-lg"></i>
+            </div>
+            <div class="content">content</div>
+            <aside id="asideRight" class="open"></aside>
+        </main>
+
+        <footer>
+            Footer
+        </footer>
+    </div>
+    <script>
+        document.getElementById("arrow").onclick = function klikMij() {
+            if(document.getElementById("asideLeft").className == "close") {
+            document.getElementById("asideLeft").className = "open";
+            document.getElementById("asideRight").className = "open";
+            document.getElementById("arrow").className = "fa-solid fa-square-caret-left fa-lg";
+            } else {
+            document.getElementById("asideLeft").className = "close";
+            document.getElementById("asideRight").className = "close";
+            document.getElementById("arrow").className = "fa-solid fa-square-caret-right fa-lg";
+        }}
+
+        document.getElementById("login").onclick = function showDialog() {
+            document.getElementById("dialog").style.top = "200px";
+            document.getElementById("overlay").style.display = "block";
+        } 
+
+        document.getElementById("closelogin").onclick = function hideDialog() {
+            document.getElementById("dialog").style.top = "-200px";
+            document.getElementById("overlay").style.display = "none";
+        }
+
+    </script>
+</body>
+</html>

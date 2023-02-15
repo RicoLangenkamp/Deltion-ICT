@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title> 
+</head>
+<body>
+    <a href="..">Directory</a>
+    <h1>Opdracht JS02</h1>
+    <br>
+
+    <p>b)</p>
+    <button id="Klaas" onclick="schrijfGroet('Klaas')">Klaas</button>
+    <button id="Chris" onclick="schrijfGroet('Chris')">Chris</button>
+    <p id="tekst">Klik op een knop</p>
+    <br>
+
+    <p>c)</p>
+    <button id="show">laat text zien</button>
+    <p id="mijnNaam"></p>
+    <br>
+
+    <p>d)</p>
+    <button id="show2">laat text zien</button>
+    <p id="mijnNaam2"></p>
+
+    <p>e)</p>
+    <form action="" method="POST">
+        <table>
+            <tr>
+                <td>voornaam</td>
+                <td><input type="text" name="vnaam" id="vnaam"></td>
+            </tr>
+            <tr>
+                <td>achternaam</td>
+                <td><input type="text" name="lnaam" id="lnaam"></td>
+            </tr>
+            <tr>
+                <td>leeftijd</td>
+                <td><input type="text"  name="leeftijd" id="leeftijd"></td>
+            </tr>
+        </table>
+    </form>
+    <button id="formklik">Vul in</button>
+    <p id="formtext"></p>
+
+    <script>
+        function schrijfGroet(naam) {
+        console.log('dit is function schrijfNaam');
+        document.getElementById("tekst").innerHTML = "Hallo " + naam;
+        }
+
+        var voornaam = "Rico";
+        var achternaam = "Langenkamp";
+        let leeftijd = 18;
+        let xjaar = 9;
+
+        var output = "";
+        let telshow = 0;
+
+        document.getElementById("show").onclick = function mijnNaam() {
+            if(telshow==0){
+                output = "Ik ben " + voornaam + " " + achternaam + ", en ik ben " + leeftijd + " jaar oud";
+                telshow = 1;
+            }
+            else{
+                output = null;
+                telshow = 0
+            }
+            document.getElementById("mijnNaam").innerHTML = output;
+        }
+
+        var output2 = "";
+        let telshow2 = 0;
+
+        document.getElementById("show2").onclick = function mijnNaam2() {
+            if(telshow2==0){
+                output2 = "Ik ben " + voornaam + " " + achternaam + ", en over " + xjaar + " jaar ben ik " + (leeftijd+xjaar) + " jaar oud";
+                telshow2 = 1;
+            }
+            else{
+                output2 = null;
+                telshow2 = 0
+            }
+            document.getElementById("mijnNaam2").innerHTML = output2;
+        }
+        
+        var vnaam = null;
+        var lnaam = null;
+        let age = null;
+
+        document.getElementById("formklik").onclick = function form() {
+            vnaam = document.getElementById("vnaam").value;
+            lnaam = document.getElementById("lnaam").value; 
+            age = document.getElementById("leeftijd").value;
+            document.getElementById("formtext").innerHTML = "Ik ben " + vnaam + " " + lnaam + ", en ik ben " + age + " jaar oud";
+        }
+    </script>
+</body>
+</html>

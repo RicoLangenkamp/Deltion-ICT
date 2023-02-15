@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulier</h1>
+    <table>
+        <tr>
+            <td><label for="vname">*Naam:</label></td>
+            <td><input type=text id=vname placeholder="voornaam" onkeyup="keyUp(this)">
+            <input type=text id=tname placeholder="tv">
+            <input type=text id=lname placeholder="achternaam" onkeyup="keyUp(this)"></td>
+            <td><div id="namef"></div></td>
+        </tr>
+        <tr>
+            <td><label for="street">*Adres:</label></td>
+            <td><input type=text id=street placeholder="straat" onkeyup="keyUp(this)">
+            <input type=text id=housenumber placeholder="nummer" onkeyup="keyUp(this)"></td>
+            <td><div id="adressf"></div></td>
+        </tr>
+        <tr >
+            <td><label for="postcode">*Plaats:</label></td>
+            <td><input type=text id=postcode placeholder="postcode" onkeyup="keyUp(this)">
+            <input type=text id=place placeholder="plaats" onkeyup="keyUp(this)"></td>
+            <td><div id="placef"></div></td>
+        </tr>
+        <tr>
+            <td><label for="number">Mobiel:</label></td>
+            <td><input type=text id=number placeholder="06-12345678" onkeyup="keyUp(this)"></td>
+            <td><div id="numf"></div></td>
+        </tr>
+        <tr>
+            <td><label for="mail">Email:</label></td>
+            <td><input type=email id=mail placeholder="voorbeeld@gmail.com" onkeyup="keyUp(this)"></td>
+            <td><div id="mailf"></div></td>
+        </tr>
+        <tr>
+            <td>Geslacht:</td>
+            <td><label>Man</label><input type=radio id=man name="geslacht">
+            <label>Vrouw</label><input type=radio id=woman name="geslacht">
+            <label>Anders</label><input type=radio id=other name="geslacht"></td>
+            <td><div id="sexf"></div></td>
+        </tr>
+        <tr>
+            <td><label for="birthdate">Geboortedatum:</label></td>
+            <td><input type="text" id=birthdate placeholder="dd-mm-jjjj" onkeyup="keyUp(this)"></td>
+            <td><div id="birthf"></div></td>
+        </tr>
+        <tr>
+            <td><label for="birthdate">*verplichte velden </label></td>
+            <td><button id="button">Verstuur</button></td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>

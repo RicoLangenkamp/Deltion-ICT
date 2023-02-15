@@ -1,0 +1,39 @@
+body {
+    background-color:white;
+}
+
+.link {
+    border:3px solid black;
+    border-radius: 8px;
+    background-color: blue;
+    margin:5px;
+    padding: 5px;
+    color: white;
+}
+
+table , th {
+    text-align: center;
+}
+
+table, td, th {
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.table, table {
+    margin: 15px;
+    margin-left: 3px;
+    width: 50%;
+    border: none;
+}
+
+.info {
+    background-color: lightgray;
+    width: 25%;
+    padding-left: 10px;
+    margin-left: 5px;
+}
+
+a {
+    text-decoration:none;
+}
