@@ -71,16 +71,40 @@ function keyUp(inp) {
             }
         }
     }
-    if (inp.id == "email") {
-        checkmail = /^[A-z]{4}@[A-z]{5}$/
+    if (inp.id == "mail") {
+        checkmail = /^[A-z]{2,}@[A-z]{2,}\.com|nl$/
         OK = checkmail.exec(inp.value);
         if (OK) {
             inp.style.backgroundColor = "#AAFFAA";
             document.getElementById("mailf").innerHTML = ("")
         }
         else {
-            inp.style.backgroundColor = "#FFAAAA"
-            document.getElementById("mailf").innerHTML = (inp.value + " is geen geldig telefoonnummer.")
+            if (inp.value == "") {
+                inp.style.backgroundColor = "#FFFFFF";
+                document.getElementById("mailf").innerHTML = ("")
+            }
+            else {
+                inp.style.backgroundColor = "#FFAAAA"
+                document.getElementById("mailf").innerHTML = (inp.value + " is geen geldig mailadres.")
+            }
+        }
+    }
+    if (inp.id == "birthdate") {
+        checkbirth = /^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$/
+        OK = checkbirth.exec(inp.value);
+        if (OK) {
+            inp.style.backgroundColor = "#AAFFAA";
+            document.getElementById("birthf").innerHTML = ("")
+        }
+        else {
+            if (inp.value == "") {
+                inp.style.backgroundColor = "#FFFFFF";
+                document.getElementById("birthf").innerHTML = ("")
+            }
+            else {
+                inp.style.backgroundColor = "#FFAAAA"
+                document.getElementById("birthf").innerHTML = (inp.value + " is geen geldige geboortedatum.")
+            }
         }
     }
 }
