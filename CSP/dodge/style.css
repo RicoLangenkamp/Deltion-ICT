@@ -1,0 +1,36 @@
+#container{
+    top: 10%;
+}
+
+#border{
+    background-color: green;
+    position: fixed;
+    width: 1200px;
+    height: 600px;
+    left: 10%;
+}
+
+#player{
+    width: 10px;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+    left: 1190px;
+    top: 275px;
+}
+
+.bullets{
+    width: 25px;
+    height: 10px;
+    background-color: red;
+    position: absolute;
+}
+
+.bullettime{
+    width: 50px;
+    height: 10px;
+    background-color: yellow;
+    position: absolute;
+    right: 91%;
+    display: none;
+}
