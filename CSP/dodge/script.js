@@ -9,26 +9,24 @@ window.onload = start;
 
 function start() {
     box = document.getElementById("box");
-    box.posX = box.offsetLeft;
     box.posY = box.offsetTop;
-    box.velX = speed / 3;
     box.velY = speed;
 
     setInterval(moveBox, 33);
 }
 
 var timer = setInterval(bullettimer(a, 50),);
+var bullettime = Array["","","","",""];
 
-function spawnbullet(a) {
-    bulletnum = a;
+function spawnBullet(a) {
     bullet = document.getElementById("bullet" + a);
-    bullettime = document.getElementById("bullettime" + a);
+    bullettime[a] = document.getElementById("bullettime" + a);
     rng = Math.floor(Math.random() * 590);
     console.log(rng);
     bullet.style.top = rng + "px";
-    bullettime.style.top = rng + "px";
+    bullettime[a].style.top = rng + "px";
     bullettimer(a, 50);
-    bullettime.style.display = "block";
+    bullettime[a].style.display = "block";
 }
 
 function bullettimer(b, i) {
