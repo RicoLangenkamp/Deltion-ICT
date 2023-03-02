@@ -17,7 +17,6 @@
                 <td><input type="number" name="tafel" id="tafel" placeholder="Tafel"></td>
             </tr>
             <tr>
-                <!--spaces are to create room between text and input-->
                 <td>Geef beginwaarde voor Tafel: &nbsp&nbsp</td>
                 <td><input type="number" name="btafel" id="btafel" value="1"></td>
             </tr>
@@ -36,8 +35,10 @@
         document.getElementById("sendit").onclick = function form() {
             var x = "";
             let input = document.getElementById("tafel").value;
-            let begin = document.getElementById("btafel").value;
-            let end = document.getElementById("etafel").value;
+
+            let begin = parseInt(document.getElementById("btafel").value);
+            let end = parseInt(document.getElementById("etafel").value);
+            
 
             if(input == ""){
                 x = "Voer een tafel in";
@@ -49,8 +50,8 @@
                 }
             }
 
-            if(begin>=end){
-                x = "De beginwaarde mag niet groter zijn dan de eindwaarde.";
+            if(end <= begin){
+                x = "De beginwaarde mag niet groter zijn dan de eindwaarde. " + begin + " " + end;
             }
 
             document.getElementById("out").innerHTML = x;
