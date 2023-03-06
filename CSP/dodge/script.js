@@ -119,7 +119,6 @@ function movePlayer(a) {
 }
 
 function gameOver() {
-    console.log("game over");
     gameover = true;
     document.getElementById("dialog").style.top = "200px";
     document.getElementById("overlay").style.display = "block";
