@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Cardgame</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><label>aantal spelers:</label></td>
+            <td><input type="number" id="spelers" value="4"></td>
+        </tr>
+        <tr>
+            <td><label>aantal kaarten per speler:</label></td>
+            <td><input type="number" id="kaarten" placeholder="leeg = max"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button  onclick="toonSets()">Deel kaarten</button></td>
+        </tr>
+    </table>
+    <div id="output"></div>
+</body>
+</html>

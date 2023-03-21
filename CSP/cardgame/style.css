@@ -1,0 +1,14 @@
+img{
+    object-fit: contain;
+    width: 60px;
+    background-color: white;
+    margin-right: 4px;
+}
+
+body{
+    background-color: rgb(215, 215, 215);
+}
+
+input{
+    width: 80px;
+}
