@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Cardgame</title>
+    <meta name="viewport">
+    <title>Kaarten delen</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
@@ -19,7 +19,15 @@
             <td><input type="number" id="kaarten" placeholder="leeg = max"></td>
         </tr>
         <tr>
-            <td colspan="2"><button  onclick="toonSets()">Deel kaarten</button></td>
+            <td><label>aantal stapels kaarten:</label></td>
+            <td><input type="number" id="stapels" value="1"></td>
+        </tr>
+        <tr>
+            <td><label>Zonder jokers</label></td>
+            <td><input type="checkbox" id="jokers"><td>
+        </tr>
+        <tr>
+            <td colspan="2"><button  onclick="toonSets()">Deel kaarten</button><label> of druk op spatie</label></td>
         </tr>
     </table>
     <div id="output"></div>
