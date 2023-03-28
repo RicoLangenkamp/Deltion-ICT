@@ -1,0 +1,18 @@
+td{
+    border: 2px solid black;
+    margin: 0px;
+}
+
+table{
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+.num{
+    border: 1px solid rgba(0, 0, 0, 0.295);
+}
+
+.numt{
+    border-right: 1px solid rgba(0, 0, 0, 0.295);
+    border-left: 1px solid rgba(0, 0, 0, 0.295);
+}

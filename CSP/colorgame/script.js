@@ -13,6 +13,7 @@ var timer2;
 
 function start() {
     if (!interval) {
+        color();
         let tsec = document.getElementById("timet").value;
         let ksec = document.getElementById("timek").value;
 

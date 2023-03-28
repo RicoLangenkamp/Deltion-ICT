@@ -249,7 +249,9 @@
     </form><br>
     <?php echo ("Aantal Sterrren = " . $sterren . "<br>")?>
     <?php echo ("Aantal gele Sterrren = " . $gsterren . "<br>")?>
-    <?php echo ("Percentage gele Sterrren ≈ " . round(100/$sterren*$gsterren,2) . "% <br>")?>
+    <?php if($sterren*$gsterren!=0){
+            echo ("Percentage gele Sterrren ≈ " . round(100/$sterren*$gsterren,2) . "% <br>");
+    }?>
     <?php echo $out?>
     <p class="stump"><b>/&nbsp&nbsp&nbsp\</b></p>
     <p class="stump"><b>/___\</b></p> 
