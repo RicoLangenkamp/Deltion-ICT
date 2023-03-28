@@ -6,7 +6,5 @@ function smoothScroll(a){
 }
 
 function sendToPage(a){
-   
         window.location = a;
-        
 }
