@@ -243,6 +243,7 @@
     <div class="snow"></div>
 </div>
     <h1>Kerstboom</h1>  
+    <a href="https://github.com/RicoLangenkamp/Deltion-ICT/tree/main/Old/html-php/kerstboom">Link to code</a><br><br>
     <form action="" method="post">
         Hoeveel regels moet de kerstboom hebben?<input type=text name=untill value=<?php echo($untill)?>>
         <input type=Submit name=Submit value="Maak kerstboom">
