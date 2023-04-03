@@ -6,5 +6,10 @@ function smoothScroll(a){
 }
 
 function sendToPage(a){
+    if(a.includes(".html")){
         window.location = a;
+    }
+    else if(a.includes(".php")){
+        window.location.href = "http://localhost/html/" + a;
+    }
 }

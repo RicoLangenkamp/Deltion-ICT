@@ -11,9 +11,11 @@ var bullet = [document.getElementById('bullet0'), document.getElementById('bulle
 var speed = 5;
 var count = 5;
 var misses = 0;
+var started = Boolean(false);
+var go = Boolean(false);
 
 document.onkeydown = function (e) {
-    if(gameover == false){
+    if (gameover == false) {
         switch (e.keyCode) {
             case 38:
                 movePlayer('up')
@@ -25,8 +27,7 @@ document.onkeydown = function (e) {
     }
 }
 
-let starting = setInterval(startFire, 2000);
-window.onload = start;
+let starting;
 
 for (i = 0; i < 5;) {
     bullet[i].posX = bullet[i].offsetLeft;
@@ -34,97 +35,127 @@ for (i = 0; i < 5;) {
 }
 
 function start() {
-    player = document.getElementById("player");
-    player.posY = player.offsetTop;
-}
-
-function startFire() {
-    spawnBullet(5 - count);
-    count -= 1;
-    if (count == 0) {
-        clearInterval(starting);
+    if (go == false) {
+        go = true;
+        if (started == false) {
+            player = document.getElementById("player");
+            player.posY = player.offsetTop;
+            startFire();
+            starting = setInterval(startFire, 2000);
+            started = true;
+        }
     }
 }
 
+function stop() {
+    go = false;
+}
+
+function startFire() {
+    if(go == true){
+        console.log("started")
+        spawnBullet(5 - count);
+        bullet[5-count].style.display = "block";
+        count -= 1;
+        if (count == 0) {
+            clearInterval(starting);
+        }
+    }
+}
 
 function spawnBullet(a) {
-    if(gameover == false){
+    if (gameover == false) {
         rng = Math.floor(Math.random() * 590);
         bullet[a].style.top = rng + "px";
-        bullettime[a].style.top = rng + 10 + "px";
+        bullettime[a].style.top = rng + 8 +"px";
         bullettime[a].style.display = "block";
-        bullettimer(a, 50);
-
         bullet[a].posY = rng;
+        bullettimer(a, 50);
     }
 }
 
 function bullettimer(b, i) {
-    if(gameover == false){
-        if (b < 0) { return; }
-        else {
-            if (i == 0) {
-                bullettime[b].style.display = "none";
-                movebullet(b);
-            }
+    if(go == true){
+        if (gameover == false) {
+            if (b < 0) { return; }
             else {
-                bullettime[b].style.width = i + "px";
-                i -= 1;
-                setTimeout(() => { bullettimer(b, i); }, 20);
+                if (i == 0) {
+                    bullettime[b].style.display = "none";
+                    movebullet(b);
+                }
+                else {
+                    bullettime[b].style.width = i + "px";
+                    i -= 1;
+                    setTimeout(() => { bullettimer(b, i); }, 20);
+                }
             }
         }
+    }
+    else{
+        setTimeout(() => { bullettimer(b, i); }, 20);
     }
 }
 
 function movebullet(c) {
-    if(gameover == false){
-        bullet[c].posX += speed;
-        bullet[c].style.left = bullet[c].posX + "px";
-        if (bullet[c].posY >= player.posY - 10 && bullet[c].posY <= player.posY + 50 && bullet[c].posX >= maxX - 30) {
-            score += 1;
-            document.getElementById("score").innerHTML = "jouw score is: " + score;
-            bullet[c].style.left = "0px";
-            bullet[c].posX = 0;
-            spawnBullet(c);
-        }
-        else if (bullet[c].posX >= maxX - 25) {
-            bullet[c].style.left = "0px";
-            bullet[c].posX = 0;
-            spawnBullet(c);
-            misses++;
-            document.getElementById("mis").innerHTML += " x";
-            if (misses == 5) {
-                gameOver()
+    if(go == true){
+        if (gameover == false) {
+            bullet[c].posX += speed;
+            bullet[c].style.left = bullet[c].posX + "px";
+            if (bullet[c].posY >= player.posY - 5 && bullet[c].posY <= player.posY + 50 && bullet[c].posX >= maxX - 30) {
+                score += 1;
+                document.getElementById("score").innerHTML = "jouw score is: " + score;
+                bullet[c].style.left = "0px";
+                bullet[c].posX = 0;
+                spawnBullet(c);
+            }
+            else if (bullet[c].posX >= maxX - 25) {
+                bullet[c].style.left = "0px";
+                bullet[c].posX = 0;
+                spawnBullet(c);
+                misses++;
+                document.getElementById("mis").innerHTML += " x";
+                if (misses == 5) {
+                    gameOver()
+                }
+            }
+            else {
+                setTimeout(() => { movebullet(c) }, 33);
             }
         }
-        else {
-            setTimeout(() => { movebullet(c) }, 33);
-        }
+    }
+    else{
+        setTimeout(() => { movebullet(c) }, 33);
     }
 }
 
 
 function movePlayer(a) {
-    if (a == 'up') {
-        if (player.posY <= 0) { }
-        else { player.posY -= speed * 3 }
+    if(go == true){
+        if (a == 'up') {
+            if (player.posY <= 0) { }
+            else { player.posY -= speed * 3 }
+        }
+        if (a == 'down') {
+            if (player.posY >= maxY - 50) { }
+            else { player.posY += speed * 3 }
+        }
+        if (player.posY < 0) { player.posY = 0 }
+        if (player.posY > maxY - 50) { player.posY = maxY - 50 }
+        player.style.top = player.posY + "px";
     }
-    if (a == 'down') {
-        if (player.posY >= maxY - 50) { }
-        else { player.posY += speed * 3 }
-    }
-    if (player.posY < 0) { player.posY = 0 }
-    if (player.posY > maxY - 50) { player.posY = maxY - 50 }
-    player.style.top = player.posY + "px";
 }
 
 function gameOver() {
     gameover = true;
     document.getElementById("dialog").style.top = "200px";
     document.getElementById("overlay").style.display = "block";
-    document.getElementById("dialogcontent").innerHTML += score ;
+    document.getElementById("dialogcontent").innerHTML += score;
 }
 
-function reset(){
+function reset() {
     location.reload();
+}
+
+function back() {
+    window.history.back();
 }

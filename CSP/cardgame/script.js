@@ -134,3 +134,7 @@ window.addEventListener('keydown', function(e) {
       toonSets();
     }
   });
+  
+function back(){
+    window.history.back();
+}

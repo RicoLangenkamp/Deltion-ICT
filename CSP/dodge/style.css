@@ -13,7 +13,7 @@
 #player{
     width: 10px;
     height: 50px;
-    background-color: black;
+    object-fit: fill;
     position: absolute;
     left: 1190px;
     top: 275px;
@@ -21,18 +21,24 @@
 
 .bullets{
     width: 25px;
-    height: 10px;
-    background-color: red;
+    height: 5px;
     position: absolute;
-    top: 0;
+    display: none;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    position: absolute;
 }
 
 .bullettime{
     width: 50px;
-    height: 10px;
+    height: 5px;
     background-color: yellow;
     position: absolute;
-    right: 91%;
+    right: 90.3%;
     display: none;
 }
 

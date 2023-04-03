@@ -105,3 +105,7 @@ function shuffle(a) {
 
     return a;
 }
+
+function back(){
+    window.history.back();
+}
