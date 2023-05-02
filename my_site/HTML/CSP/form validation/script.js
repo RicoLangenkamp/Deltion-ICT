@@ -95,7 +95,7 @@ function keyUp(inp) {
         if (OK) {
             inp.style.backgroundColor = "#AAFFAA";
             document.getElementById("birthf").innerHTML = ("")
-        }
+        }1
         else {
             if (inp.value == "") {
                 inp.style.backgroundColor = "#FFFFFF";
