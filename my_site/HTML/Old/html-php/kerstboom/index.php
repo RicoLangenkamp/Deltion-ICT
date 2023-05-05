@@ -243,7 +243,7 @@ if (!empty($_POST['untill']) && is_numeric($_POST['untill'])) {
         <div class="snow"></div>
     </div>
     <h1>Kerstboom</h1>
-    <a href="https://github.com/RicoLangenkamp/Deltion-ICT/tree/main/Old/html-php/kerstboom">Link to code</a>
+    <a href="https://github.com/RicoLangenkamp/Deltion-ICT/tree/main/my_site/HTML/Old/html-php/kerstboom">Link to code</a>
     <button onclick="back()">Ga terug</button><br><br>
     <form action="" method="post">
         Hoeveel regels moet de kerstboom hebben?<input type=text name=untill value=<?php echo ($untill) ?>>
