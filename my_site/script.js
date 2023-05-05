@@ -10,6 +10,6 @@ function sendToPage(a){
         window.location = a;
     }
     else if(a.includes(".php")){
-        window.location.href = "http://localhost/html/" + a;
+        window.location.href = "http://ricolangenkamp.nl/my_site/" + a;
     }
 }
