@@ -3,7 +3,7 @@ function maakDeck(a) {
     var Values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'A', 'J', 'Q', 'K', 'Joker'];
     var Jokers = ['Black', 'Red', 'Black-hy'];
 
-    // maakt een lege variable deck en een counter om bij te houden op wlke plek je in het deck zit.
+       // maakt een lege variable deck en een counter om bij te houden op wlke plek je in het deck zit.
     var deck = [];
     var cardcount = 0;
     var incjokers = document.getElementById("jokers").checked;
