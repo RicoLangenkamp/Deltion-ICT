@@ -31,7 +31,7 @@ $skip = False;
 $veneta = 0;
 $sdsabo = 0;
 foreach ($array as $row) {
-
+    $row[3] = (string) $row[3];
     if ($row[2] == "calls") {
         $row[4] = minutes($row[4]);
     }
@@ -101,8 +101,7 @@ foreach ($array as $row) {
         }
 
         // every client with ## in front of name is test, this can be removed. And our own can be removed as well
-        if (str_contains($row[0], '##') || $row[0] == "Salland ICT" || $row[0] == "Gemeente Zwolle" || str_contains($row[3], 'Ftt') || str_contains($row[3], 'BBVDSL' || str_contains($row[3], 'NLS'))) {
-            Print_r($row);
+        if (str_contains($row[0], '##') || $row[0] == "Salland ICT" || $row[0] == "Gemeente Zwolle" || str_contains($row[3], 'Ftt' || 'BVV' || 'NLS') || str_contains($row[4],'KB')) {
             unset($array[$dline2]);
         }
 
@@ -143,6 +142,12 @@ foreach ($array as $row) {
         }
     } else {
         // add to call data of client and remove row when it is added to total
+        
+        // every client with ## in front of name is test, this can be removed. And our own can be removed as well
+        if (str_contains($row[0], '##') || $row[0] == "Salland ICT" || $row[0] == "Gemeente Zwolle" || str_contains($row[3], 'Ftt' || 'BVV' || 'NLS') || str_contains($row[4],'KB')) {
+            unset($array[$dline2]); 
+        }
+
         if ($row[1] == $client) {
             if ($row[2] == "calls") {
                 $duration += $row[4];
@@ -155,11 +160,7 @@ foreach ($array as $row) {
             }
         } else {
             // first row of next client
-
-            // every client with ## in front of name is test, this can be removed. And our own can be removed as well
-            if (str_contains($row[0], '##') || $row[0] == "Salland ICT" || $row[0] == "Gemeente Zwolle" || str_contains($row[3], 'Ftt' || 'BVV' || 'NLS')) {
-                unset($array[$dline2]);
-            }
+            
 
             if ($skip == true) {
                 $skip = false;
@@ -216,8 +217,8 @@ foreach ($array as $row) {
                         // subsctiption price
                         $call[3][0] = $customer;
                         $call[3][1] = $customer;
-                        $call[3][2] = "abonnement";
-                        $call[3][3] = "abonnement";
+                        $call[3][2] = "Abonnement";
+                        $call[3][3] = "Abonnement";
                         $call[3][4] = "";
                         $call[3][5] = 1;
                         $call[3][6] = $sdsabo * $perc;
@@ -285,11 +286,7 @@ foreach ($array as $row) {
     }
     $dline2++;
 }
-// remove empty lines from array
 
-$array = array_values(array_filter($array));
-
-// sort multidimentional array
 
 
 

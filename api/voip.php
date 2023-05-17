@@ -55,8 +55,12 @@ foreach ($voiparray as $row) {
             $temp[3] = $row[7];
         }
         $temp[4] = "";
+        if($row[6] == "Abonnement"){
+            $temp[5] = 1;
+        } else{
         $row[5] = Round(str_replace(",", ".", $row[5]));
         $temp[5] = $row[5];
+        }
         $row[9] = Round(str_replace(",", ".", $row[9]), 2);
         $temp[6] = $row[9];
         array_push($array, $temp);

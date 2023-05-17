@@ -27,8 +27,8 @@ foreach ($exceptionarray as $row) {
         $temp[0] = $row[0];
         $temp[1] = $row[1];
         $temp[2] = "";
-        $temp[3] = $row[3];
-        $temp[4] = "";
+        $temp[3] = "bijzonder";
+        $temp[4] = $row[3];
         $temp[5] = $row[4];
         $temp[6] = $row[5];
         array_push($array, $temp);
