@@ -24,18 +24,17 @@ foreach ($array as $line) {
         $temparray[$sline] = $line;
         unset($array[$sline]);
     } else {
-
         // print_r($temparray);
-        $sortorder = array(
+        $sortorder2 = array(
             "Abonnement",
             "gesprekskosten",
             "aantal",
             "tijd"
         );
 
-        usort($temparray, function ($a, $b) use ($sortorder) {
-            $a = array_search($a[3], $sortorder);
-            $b = array_search($b[3], $sortorder);
+        usort($temparray, function ($a, $b) use ($sortorder2) {
+            $a = array_search($a[3], $sortorder2);
+            $b = array_search($b[3], $sortorder2);
             if ($a === false && $b === false) {
                 return 0;
             } elseif ($a === false) {
@@ -46,8 +45,34 @@ foreach ($array as $line) {
                 return $a - $b;
             }
         });
-        foreach ($temparray as $a) {
 
+        if ($client == "Veneta BV Nederland") {
+            $sortorder = array(
+                "Onnet",
+                "National Freephone",
+                "National 085",
+                "National 088",
+                "National Geographic",
+                "International",
+                "National Mobile"
+            );
+
+            usort($temparray, function ($a, $b) use ($sortorder) {
+                $a = array_search($a[4], $sortorder);
+                $b = array_search($b[4], $sortorder);
+                if ($a === false && $b === false) {
+                    return 0;
+                } elseif ($a === false) {
+                    return 1;
+                } elseif ($b === false) {
+                    return -1;
+                } else {
+                    return $a - $b;
+                }
+            });
+        }
+        
+        foreach ($temparray as $a) {
             array_push($array, $a);
         }
         $client = $line[1];
@@ -103,23 +128,26 @@ usort($array, function ($a, $b) use ($order) {
             border: 1px solid black;
             border-collapse: collapse;
         }
-        td{
-            border-bottom: 1px solid black;
+
+        td {
+            border-left: 1px solid black;
         }
+
         tr:nth-child(odd) {
             background: lightgray;
         }
     </style>
 </head>
+
 <body>
     <table>
         <tr>
-            <td style="background-color: gray">Klant/Partner</td>
-            <td style="background-color: gray">Klantnaam</td>
-            <td style="background-color: gray">Omschrijving</td>
-            <td style="background-color: gray">specificatie</td>
-            <td style="background-color: gray">aantal</td>
-            <td style="background-color: gray">prijs</td>
+            <th style="background-color: gray">Klant/Partner</th>
+            <th style="background-color: gray">Klantnaam</th>
+            <th style="background-color: gray">Omschrijving</th>
+            <th style="background-color: gray">specificatie</th>
+            <th style="background-color: gray">aantal</th>
+            <th style="background-color: gray">prijs</th>
         </tr>
         <?php
         foreach ($array as $a) {

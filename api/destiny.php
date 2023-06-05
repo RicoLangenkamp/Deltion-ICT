@@ -300,7 +300,7 @@ function minutes($time)
         $time1 = intval($time[0]);
         $time2 = intval($time[1]);
         $time3 = intval($time[2]);
-        return (($time1 * 60) + $time2 + $time3 / 60);
+        return (($time1 * 60) + $time2 + round($time3 / 60));
     } else {
         return 0;
     }
