@@ -35,8 +35,17 @@ include("../../api/final.php");
             <th style="background-color: gray">specificatie</th>
             <th style="background-color: gray">aantal</th>
             <th style="background-color: gray">prijs</th>
+            <th style="background-color: gray">korting</th>
         </tr>
         <?php
+        $pids = array();
+        foreach ($array as $h) {
+            $pids[] = $h[3];
+        }
+        $uniquePids = array_unique($pids);
+        foreach($uniquePids as $a){
+            echo $a . "<br>";
+        }
         foreach ($array as $a) {
             echo "<tr>";
             foreach ($a as $b) {
